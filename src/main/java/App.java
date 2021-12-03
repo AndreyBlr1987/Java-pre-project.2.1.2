@@ -1,3 +1,4 @@
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -8,5 +9,13 @@ public class App {
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
         System.out.println(bean.getMessage());
+
+        HelloWorld newBean = (HelloWorld) applicationContext.getBean("helloworld");
+
+        Cat firstCat = (Cat) applicationContext.getBean("cat");
+        Cat secondCat = (Cat) applicationContext.getBean("cat");
+
+        System.out.println(bean == newBean);
+        System.out.println(firstCat == secondCat);
     }
 }
